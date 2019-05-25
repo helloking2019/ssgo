@@ -228,23 +228,23 @@ download_files(){
             echo -e "[${red}Error${plain}] Failed to download ss-server-linux64-1.2.2.gz"
             exit 1
         fi
-        gzip -d shadowsocks-server-linux64-1.2.2.gz
+        gzip -d ss-server-linux64-1.2.2.gz
         if [ $? -ne 0 ]; then
             echo -e "[${red}Error${plain}] Decompress ss-server-linux64-1.2.2.gz failed"
             exit 1
         fi
-        mv -f shadowsocks-server-linux64-1.2.2 /usr/bin/shadowsocks-server
+        mv -f ss-server-linux64-1.2.2 /usr/bin/shadowsocks-server
     else
         if ! wget --no-check-certificate -c https://github.com/helloking2019/ssgo/releases/download/1.0/ss-server-linux32-1.2.2.gz; then
             echo -e "[${red}Error${plain}] Failed to download ss-server-linux32-1.2.2.gz"
             exit 1
         fi
-        gzip -d shadowsocks-server-linux32-1.2.2.gz
+        gzip -d ss-server-linux32-1.2.2.gz
         if [ $? -ne 0 ]; then
             echo -e "[${red}Error${plain}] Decompress ss-server-linux32-1.2.2.gz failed"
             exit 1
         fi
-        mv -f shadowsocks-server-linux32-1.2.2 /usr/bin/shadowsocks-server
+        mv -f ss-server-linux32-1.2.2 /usr/bin/shadowsocks-server
     fi
 
     # Download start script
